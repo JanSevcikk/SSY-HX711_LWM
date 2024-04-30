@@ -47,7 +47,7 @@ This function calls the HX711_measureAvg10 function to perform ten measurements 
 It compares the average value with the zero value and calculates the weight in grams based on the difference.
 If the calibration is non-zero, the corrected calibration value is used.
 It returns the calculated weight and prints it out.
-Both functions are used for weighing and obtaining weight based on the measured data from HX711. The HX711_measureGrams function utilizes the HX711_measureAvg10 function to obtain the average value.
+Both functions are used for weighing and obtaining weight based on the measured data from HX711. The HX711_measureGrams function utilizes the HX711_measureAvg10 function to obtain the average value. Basic value 16 which the measured ADC value is divided is derived from manual testing of the converter where the integer value for the division gave after dividing the ADC values ​​gave the most accurate weight possible (tested on 1kg load and 300g load).
 
 ## 2.1 Improving LWM code for sending measured data
 In the main.c function were added pullups for handling buttons which we will describe later. There is initiation of the HX711 functions which allows to process data measured and send it via LWM and UART. Mani void is handled by own interval which we set timer in config.h to 5 seconds. It calls HX711_measureGrams which return value in grams, then sends it via UART and LWM network. This void we can see in picture below.
