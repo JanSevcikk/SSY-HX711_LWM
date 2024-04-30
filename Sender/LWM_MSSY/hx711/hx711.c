@@ -15,23 +15,15 @@ unsigned long HX711_averageCount = 0;
 unsigned long HX711_GRAMS = 0;
 unsigned long HX711_kal = 0;
 //Nekonecne checkuj zmenu a pricitej zmerene
+
 void HX711_start(){
-	uint8_t pocet = 0; //vynulovani 
-	unsigned long sumCount = 0; //vynulovani 
-	while(1){
-		sumCount = sumCount + HX711_measure(); //namereno + pripocítání vysledku
-		pocet++;
-		if(pocet == 25){
-			HX711_averageCount = sumCount/pocet; //pr?mer z vzork? 
-			pocet = 0;
-			sumCount = 0;
-			HX711_ZERO = HX711_averageCount;
-			printf("\r\nHX711_ZERO hodnota nastavena na: %ld\r\n",HX711_averageCount);
+	
+			HX711_ZERO = HX711_measureAvg25();
+			printf("\r\nHX711_ZERO hodnota nastavena na: %ld\r\n",HX711_ZERO);
 			return;
-		}
+		
 		
 	}
-}
 
 unsigned long HX711_getZERO(){
 	if(HX711_ZERO == 0){
@@ -49,7 +41,7 @@ unsigned long HX711_setZERO(){
 }
 
 void HX711_reset(){
-	//Sck na HIGH po dobu víc jak 60us => reset ?ipu 
+	//Sck na HIGH po dobu vï¿½c jak 60us => reset ?ipu 
 	printf("\n\r Prevodnik resetovan");
 	sbi(PORTB,2);
 	_delay_us(70);
@@ -93,6 +85,26 @@ unsigned long HX711_measureAvg10(){
 		
 	}
 }
+
+unsigned long HX711_measureAvg25(){
+	unsigned long pocet = 0;
+	unsigned long sumCount = 0;
+	while(1){
+		sumCount = sumCount + HX711_measure();
+		pocet++;
+		if(pocet == 25){
+			HX711_averageCount = sumCount/pocet;
+			pocet = 0;
+			sumCount = 0;
+			printf("\r\nPrumerZERO: %ld\r\n",HX711_averageCount);
+			return (long)HX711_averageCount;
+		}
+		
+	}
+}
+
+
+
 unsigned long HX711_measureGrams(){
 	HX711_measureAvg10();
 	
@@ -118,22 +130,22 @@ void calibration0Kg(){
 	while (tbi(PINB, 4));
 	HX711_reset();
 	HX711_start();
-	// Po stisknutí tla?ítka 1 provede kalibraci
+	// Po stisknutï¿½ tla?ï¿½tka 1 provede kalibraci
 	//HX711711_start();
 
-	// Potvrzení kalibrace
+	// Potvrzenï¿½ kalibrace
 	printf("\r\nKalibrovano na 0kg. kal hodnota je= %ld\r\n",HX711_kal);
 }
 */
 void calibration1Kg(){
 	printf("\r\nVloz 1kg znovu zmackni 1: %ld\r\n");
-	// ?eká na stisknutí tla?ítka 1
+	// ?ekï¿½ na stisknutï¿½ tla?ï¿½tka 1
 	while (tbi(PINE, 5));
-	HX711_kal = (HX711_measureAvg10()-HX711_getZERO())/1000; //vzorky / d?leno základní base hodnotou a d?leno kilem
-	// Po stisknutí tla?ítka 1 provede kalibraci
+	HX711_kal = (HX711_measureAvg10()-HX711_getZERO())/1000; //vzorky / d?leno zï¿½kladnï¿½ base hodnotou a d?leno kilem
+	// Po stisknutï¿½ tla?ï¿½tka 1 provede kalibraci
 	//HX711711_start();
 
-	// Potvrzení kalibrace
+	// Potvrzenï¿½ kalibrace
 	printf("\r\nKalibrovano na 1kg. kal hodnota je= %ld\r\n",HX711_kal);
 }
 /*
@@ -141,10 +153,10 @@ void calibration2Kg(){
 	printf("\r\nVloz 2kg znovu zmackni 2: %ld\r\n");
 	while (tbi(PINF, 0));
 	HX711_kal = (HX711_measureAvg10()-HX711_getZERO())/2000;
-	// Po stisknutí tla?ítka 1 provede kalibraci
+	// Po stisknutï¿½ tla?ï¿½tka 1 provede kalibraci
 	//HX711711_start();
 
-	// Potvrzení kalibrace
+	// Potvrzenï¿½ kalibrace
 	printf("\r\nKalibrovano na 2kg. kal hodnota je= %ld\r\n",HX711_kal);
 }
 */
