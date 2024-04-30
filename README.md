@@ -59,14 +59,26 @@ Part for sending via LWM can be seen in picture below.
 ![](Images/6.png "sendinglwm")
 
 ## 3.Connecting together
-In picture this picture you can see load cells connected to HX711. 
+In picture this picture you can see load cells connected to HX711. We are using 4 load cells in wheatstone bridge. 
 ![](Images/3.jpg "loadcells")
 
 HX711 is connected to ATMega on EXT5, VCC on pin 19 also GND right next to it, SCK on pin 15, pin 17 is used for STD (data pin)
 ![](Images/4.jpg "connection")
 
 ## 4.How to use
-Bla bla bla
+**
+1. Check connections
+2. Prepare receiver code
+3. Prepare sender code and connect modules and boards
+4. Adjust or check code
+5. Run code on both receiver and sender with open PuTTy or other software
+6. Operate weight with Button 0 on board and Button 1 on expansion board
+7. Put weight on measuring device
+
+**
+Firstly download code and make sure you have all hardware and software ready. Then on the PC connected to ATMEGA which will we use as receiver put receiving part of the code, build and run it. 
+
+On the sending part thing are a little bit more tricky. Firstly make you you connect HX711 like said in chapter 3 or make changes and adapt it in code. Also make sure to connect if you want use all functions the Xplained OLED expansion board [6]. Then in code check config.h if it corresponds with chapter 1. use PuTTy or other software to read serial from ATMega. 
 
 
 # References:
@@ -79,3 +91,5 @@ Bla bla bla
 [4][LWM guide](https://ww1.microchip.com/downloads/en/Appnotes/Atmel-42028-Lightweight-Mesh-Developer-Guide_Application-Note_AVR2130.pdf)
 
 [5][Inspiration](https://github.com/bogde/HX711)
+
+[6][Expansionboard](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42077-OLED1-Xplained-Pro_User-Guide.pdf)
