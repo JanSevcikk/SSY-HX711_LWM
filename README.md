@@ -2,7 +2,7 @@
 
 # SSY-HX711_LWM
 
-Creation of school project, with HX711 sensor, ATmega256RFR2 in C library which allows user to measure weight and send it via uart and lwm network. Task was to use controller, connect HX711 and load cells (used 4 load cells).
+Creation of school project, with HX711 sensor, ATmega256RFR2 in C library which allows user to measure weight and send it via uart and lwm network. Task was to use controller, connect HX711 and load cells (used 4 load cells). I took first inspiration for using HX711 from its datasheet and from [5].
 
 ### Assignment:
 
