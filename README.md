@@ -30,7 +30,7 @@ Then we will voids in .c main library file. Let me briefly explain functions and
 1. Firstly we define variables which we will be using. 
 
 2. HX711_start 
-<is only basic function which makes inicilization of the HX711 connected via ADC. Inside is endless cycle, in which there are sumcount variable which measures and countes values (adc values) get from HX711_measure function. And measures until there are 25 measurements, then average value is counted from those 25 measurements and this value is used to set HX711_ZERO which is basically basic value for AD converted which is then used to convert it to real weight - its analog value which represents 0 Kg (if the weight plane is without objects). >
+In this we using measureAVG25, which is adjusted measureAVG10. Alson printing in the console. 
 
 3. HX711_measure
 In this function is cycle which waits until signal is detected on PINB3 (data pin of the HX711) which means weight is connected and starts sending via HX711. Then we use cyclus that reads values from HX711 for 24bits (output from HX711 is in 24b in the bimetal complements and starts with MSB). PINB2 is set to high for clock for HX711 and there is small delay for proper functioning. In the following happens this: count = count<<1;: Shifts the current data one position to the left, cbi(PORTB,2);: Sets the pin to a low level (turns off the clock signal), if(tbi(PINB,3)) count++;: If a high signal is detected on the data pin, increments the count variable. After that clock signal is ended by setting HIGH to clock pin. 
