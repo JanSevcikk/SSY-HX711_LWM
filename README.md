@@ -21,7 +21,12 @@ Part of code you can see briefly in picture below.
 
 ![](Images/1.png "Setup")
 
+## 2.Creating HX711 library
+Second step in project was to create library which will allow to measure and read data from HX711 with load cells connected. Firstly i created HX711.h which is prescription of the library and its consists of functions (voids) i want to use. 
 
+## 3.Connecting together
+
+## 4.How to use
 
 # References:
 [1][Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8393-MCU_Wireless-ATmega256RFR2-ATmega128RFR2-ATmega64RFR2_Datasheet.pdf)
