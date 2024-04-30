@@ -23,6 +23,7 @@ Part of code you can see briefly in picture below.
 
 ## 2.Creating HX711 library
 Second step in project was to create library which will allow to measure and read data from HX711 with load cells connected. Firstly i created HX711.h which is prescription of the library and its consists of functions (voids) i want to use. 
+
 ![](Images/2.png "HX711.h")
 
 Then we will voids in .c main library file. Let me briefly explain functions and what they do. 
@@ -50,9 +51,13 @@ Both functions are used for weighing and obtaining weight based on the measured 
 
 ## 2.1 Improving LWM code for sending measured data
 In the main.c function were added pullups for handling buttons which we will describe later. There is initiation of the HX711 functions which allows to process data measured and send it via LWM and UART. Mani void is handled by own interval which we set timer in config.h to 5 seconds. It calls HX711_measureGrams which return value in grams, then sends it via UART and LWM network. This void we can see in picture below.
-![](Images/5.jpg "timer")
+
+![](Images/5.png "timer")
+
 Part for sending via LWM can be seen in picture below.
-![](Images/6.jpg "sendinglwm")
+
+![](Images/6.png "sendinglwm")
+
 ## 3.Connecting together
 In picture this picture you can see load cells connected to HX711. 
 ![](Images/3.jpg "loadcells")
