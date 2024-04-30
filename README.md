@@ -70,7 +70,7 @@ It promts user after pushing button to place 1kg weight and pressingagain. Then 
 In picture this picture you can see load cells connected to HX711. We are using 4 load cells in wheatstone bridge. 
 ![](Images/3.jpg "loadcells")
 
-HX711 is connected to ATMega on EXT5, VCC on pin 19 also GND right next to it, SCK on pin 15, pin 17 is used for STD (data pin)
+HX711 is connected to ATMega on EXT5, VCC (red) on pin 19 also GND (blue) right next to it, SCK (green) on pin 15, pin 17 is used for STD (grey)(data pin)
 ![](Images/4.jpg "connection")
 
 ## 4.How to use
