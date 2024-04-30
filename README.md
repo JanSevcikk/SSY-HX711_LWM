@@ -1,4 +1,4 @@
-*This project was developed as an assignment for the ssy class at BUT FEEC University.*
+*This project was developed as an assignment for the ssy class at BUT FEEC University. (https://www.fekt.vut.cz/en/home)*
 
 # SSY-HX711_LWM
 
@@ -25,3 +25,5 @@ Part of code you can see briefly in picture below.
 
 # References:
 [Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8393-MCU_Wireless-ATmega256RFR2-ATmega128RFR2-ATmega64RFR2_Datasheet.pdf)
+[HX711sensor](https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf)
+[University](https://www.fekt.vut.cz/en/home)
