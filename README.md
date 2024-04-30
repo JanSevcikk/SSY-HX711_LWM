@@ -74,16 +74,15 @@ HX711 is connected to ATMega on EXT5, VCC on pin 19 also GND right next to it, S
 ![](Images/4.jpg "connection")
 
 ## 4.How to use
-**
-1. Check connections
-2. Prepare receiver code
-3. Prepare sender code and connect modules and boards
-4. Adjust or check code
-5. Run code on both receiver and sender with open PuTTy or other software
-6. Operate weight with Button 0 on board and Button 1 on expansion board
-7. Put weight on measuring device
 
-**
+**1. Check connections**
+**2. Prepare receiver code**
+**3. Prepare sender code and connect modules and boards**
+**4. Adjust or check code**
+**5. Run code on both receiver and sender with open PuTTy or other software**
+**6. Operate weight with Button 0 on board and Button 1 on expansion board**
+**7. Put weight on measuring device**
+
 Firstly download code and make sure you have all hardware and software ready. Then on the PC connected to ATMEGA which will we use as receiver put receiving part of the code, build and run it. 
 
 On the sending part thing are a little bit more tricky. Firstly make you you connect HX711 like said in chapter 3 or make changes and adapt it in code. Also make sure to connect if you want use all functions the Xplained OLED expansion board [6]. Then in code check config.h if it corresponds with chapter 1. use PuTTy or other software to read serial from ATMega. 
@@ -93,7 +92,7 @@ Button 1 placed on expansion board, throught interrupt, stops all measurements a
 
 The reference value of 1 kg can of course be changed to another value at will, but the recalculation of the weight values ​​will change accordingly.
 
-# References:
+# References
 [1][Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8393-MCU_Wireless-ATmega256RFR2-ATmega128RFR2-ATmega64RFR2_Datasheet.pdf)
 
 [2][HX711sensor](https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf)
