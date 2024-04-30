@@ -20,3 +20,8 @@ First step in my project was to take and improve existing code from lecture, for
 Part of code you can see briefly in picture below.
 
 ![](Images/1.png "Setup")
+
+
+
+# References:
+[Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8393-MCU_Wireless-ATmega256RFR2-ATmega128RFR2-ATmega64RFR2_Datasheet.pdf)
