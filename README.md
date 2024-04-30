@@ -58,6 +58,14 @@ Part for sending via LWM can be seen in picture below.
 
 ![](Images/6.png "sendinglwm")
 
+
+## 2.2 Calibration
+Basic assignement was extended by adding calibration. I used interrupts in code for pushing button 0 on main board or button 1 on extension board to make reset respectively calibrate. Calibration function which is called for 1kg can be seen here. 
+
+![](Images/7.png "calibration")
+
+It promts user after pushing button to place 1kg weight and pressingagain. Then it wait for the press, after it the program sets HX711_kal which is calibration value, to dividing ADC gotten values. Its measured from 10read - base value and that whole divided by 1000 (1000 grams). After the kal value is setted its used in function measureGrams, and all the measured values is divided by this value, so if you put 1kg weight on and off again, it should use +- same value.
+
 ## 3.Connecting together
 In picture this picture you can see load cells connected to HX711. We are using 4 load cells in wheatstone bridge. 
 ![](Images/3.jpg "loadcells")
@@ -80,6 +88,10 @@ Firstly download code and make sure you have all hardware and software ready. Th
 
 On the sending part thing are a little bit more tricky. Firstly make you you connect HX711 like said in chapter 3 or make changes and adapt it in code. Also make sure to connect if you want use all functions the Xplained OLED expansion board [6]. Then in code check config.h if it corresponds with chapter 1. use PuTTy or other software to read serial from ATMega. 
 
+Button 0 which is directly on ATMega board makes reset all values of code, and reset the whole device to make new measurements.
+Button 1 placed on expansion board, throught interrupt, stops all measurements and promts user to put "reference" value 1kg on the weigting board. 
+
+The reference value of 1 kg can of course be changed to another value at will, but the recalculation of the weight values ​​will change accordingly.
 
 # References:
 [1][Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8393-MCU_Wireless-ATmega256RFR2-ATmega128RFR2-ATmega64RFR2_Datasheet.pdf)
