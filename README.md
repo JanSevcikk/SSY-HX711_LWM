@@ -76,11 +76,17 @@ HX711 is connected to ATMega on EXT5, VCC on pin 19 also GND right next to it, S
 ## 4.How to use
 
 **1. Check connections**
+
 **2. Prepare receiver code**
+
 **3. Prepare sender code and connect modules and boards**
+
 **4. Adjust or check code**
+
 **5. Run code on both receiver and sender with open PuTTy or other software**
+
 **6. Operate weight with Button 0 on board and Button 1 on expansion board**
+
 **7. Put weight on measuring device**
 
 Firstly download code and make sure you have all hardware and software ready. Then on the PC connected to ATMEGA which will we use as receiver put receiving part of the code, build and run it. 
