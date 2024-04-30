@@ -49,7 +49,8 @@ It returns the calculated weight and prints it out.
 Both functions are used for weighing and obtaining weight based on the measured data from HX711. The HX711_measureGrams function utilizes the HX711_measureAvg10 function to obtain the average value.
 
 ## 2.1 Improving LWM code for sending measured data
-
+In the main.c function were added pullups for handling buttons which we will describe later. There is initiation of the HX711 functions which allows to process data measured and send it via LWM and UART. Mani void is handled by own interval which we set timer in config.h to 5 seconds. It calls HX711_measureGrams which return value in grams, then sends it via UART and LWM network. This void we can see in picture below.
+![](Images/5.jpg "timer")
 
 ## 3.Connecting together
 In picture this picture you can see load cells connected to HX711. 
