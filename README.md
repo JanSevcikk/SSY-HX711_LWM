@@ -89,6 +89,8 @@ HX711 is connected to ATMega on EXT5, VCC on pin 19 also GND right next to it, S
 
 **7. Put weight on measuring device**
 
+Detailed descripton:
+
 Firstly download code and make sure you have all hardware and software ready. Then on the PC connected to ATMEGA which will we use as receiver put receiving part of the code, build and run it. 
 
 On the sending part thing are a little bit more tricky. Firstly make you you connect HX711 like said in chapter 3 or make changes and adapt it in code. Also make sure to connect if you want use all functions the Xplained OLED expansion board [6]. Then in code check config.h if it corresponds with chapter 1. use PuTTy or other software to read serial from ATMega. 
