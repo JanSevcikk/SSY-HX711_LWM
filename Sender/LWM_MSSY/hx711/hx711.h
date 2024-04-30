@@ -17,6 +17,7 @@ void HX711_reset();
 unsigned long HX711_getZERO();
 unsigned long HX711_measure();
 unsigned long HX711_measureAvg10();
+unsigned long HX711_measureAvg25();
 unsigned long HX711_measureGrams();
 //void calibration0Kg();
 void calibration1Kg();
